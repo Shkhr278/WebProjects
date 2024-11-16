@@ -1,5 +1,20 @@
-body 
-{
-    color: red;
-    background-color: black;
+body {
+  color: red;
+  background-color: black;
+}
+
+caption {
+  border: 1px solid white;
+}
+
+table{
+    border: 1px solid white ;
+}
+
+td{
+    border: 1px solid white;
+}
+
+th{
+    border: 1px solid white;
 }

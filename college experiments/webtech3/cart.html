@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ShopEase</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </header>
+
+    <style>
+      /* General Styling */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      header nav a {
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      header nav a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Items Section */
+      .items-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 20px; /* Spacing between grid items */
+        padding: 20px;
+      }
+      .item {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        text-align: center;
+      }
+      .item img {
+        max-width: 100%;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+      .item button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100%;
+      }
+      .item button:hover {
+        background-color: #45a049;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .items-container {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); /* 2 columns for smaller screens */
+        }
+      }
+      @media (max-width: 480px) {
+        .items-container {
+          grid-template-columns: 1fr; /* 1 column for very small screens */
+        }
+      }
+
+      .cart-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .cart-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      #cart-items {
+        margin-bottom: 20px;
+      }
+      .cart-summary {
+        text-align: center;
+      }
+      .cart-summary button {
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .cart-summary button:hover {
+        background-color: #e53935;
+      }
+    </style>
+
+    <main>
+      <section class="cart-container">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+          <p id="total-price">Total Price: $0</p>
+          <button id="clear-cart">Clear Cart</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 ShopEase | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // JavaScript to manage the cart functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Update Cart in Local Storage
+        const updateCart = () => {
+          localStorage.setItem("cart", JSON.stringify(cart));
+        };
+
+        // Add item to cart
+        const addToCart = (id, name, price) => {
+          const item = cart.find((item) => item.id === id);
+          if (item) {
+            item.quantity++;
+          } else {
+            cart.push({ id, name, price, quantity: 1 });
+          }
+          updateCart();
+          alert(`${name} added to cart!`);
+        };
+
+        // Display Cart Items on Cart Page
+        const displayCartItems = () => {
+          const cartItemsContainer = document.getElementById("cart-items");
+          const totalPriceElement = document.getElementById("total-price");
+
+          if (cartItemsContainer && totalPriceElement) {
+            cartItemsContainer.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((item) => {
+              const itemElement = document.createElement("div");
+              itemElement.innerHTML = `
+                          <p>${item.name} - $${item.price} x ${item.quantity}</p>
+                      `;
+              cartItemsContainer.appendChild(itemElement);
+              total += item.price * item.quantity;
+            });
+
+            totalPriceElement.textContent = `Total Price: $${total}`;
+          }
+        };
+
+        // Clear Cart
+        const clearCart = () => {
+          cart.length = 0;
+          updateCart();
+          displayCartItems();
+          alert("Cart cleared!");
+        };
+
+        // Add Event Listeners
+        const addCartButtons = document.querySelectorAll(".add-to-cart");
+        addCartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const itemElement = button.closest(".item");
+            const id = itemElement.dataset.id;
+            const name = itemElement.dataset.name;
+            const price = parseFloat(itemElement.dataset.price);
+            addToCart(id, name, price);
+          });
+        });
+
+        const clearCartButton = document.getElementById("clear-cart");
+        if (clearCartButton) {
+          clearCartButton.addEventListener("click", clearCart);
+        }
+
+        // Display cart items if on the cart page
+        displayCartItems();
+      });
+    </script>
+  </body>
+</html>

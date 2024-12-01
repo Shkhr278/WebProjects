@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ShopEase</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </header>
+
+    <style>
+      /* General Styling */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      header nav a {
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      header nav a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Items Section */
+      .items-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 20px; /* Spacing between grid items */
+        padding: 20px;
+      }
+      .item {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        text-align: center;
+      }
+      .item img {
+        max-width: 100%;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+      .item button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100%;
+      }
+      .item button:hover {
+        background-color: #45a049;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .items-container {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); /* 2 columns for smaller screens */
+        }
+      }
+      @media (max-width: 480px) {
+        .items-container {
+          grid-template-columns: 1fr; /* 1 column for very small screens */
+        }
+      }
+    </style>
+
+    <main>
+      <section class="items-container">
+        <div class="item" data-id="1" data-name="Item 1" data-price="10">
+          <img src="https://via.placeholder.com/150" alt="Item 1" />
+          <h3>Item 1</h3>
+          <p>Price: $10</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="2" data-name="Item 2" data-price="15">
+          <img src="https://via.placeholder.com/150" alt="Item 2" />
+          <h3>Item 2</h3>
+          <p>Price: $15</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="3" data-name="Item 3" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 3" />
+          <h3>Item 3</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="4" data-name="Item 4" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 4" />
+          <h3>Item 4</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="5" data-name="Item 5" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 5" />
+          <h3>Item 5</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="6" data-name="Item 6" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 6" />
+          <h3>Item 6</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="7" data-name="Item 7" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 7" />
+          <h3>Item 7</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="8" data-name="Item 8" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 8" />
+          <h3>Item 8</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="9" data-name="Item 9" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 9" />
+          <h3>Item 9</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="10" data-name="Item 10" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 10" />
+          <h3>Item 10</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="11" data-name="Item 11" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 11" />
+          <h3>Item 11</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="item" data-id="12" data-name="Item 12" data-price="20">
+          <img src="https://via.placeholder.com/150" alt="Item 12" />
+          <h3>Item 12</h3>
+          <p>Price: $20</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 ShopEase | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // JavaScript to manage the cart functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Update Cart in Local Storage
+        const updateCart = () => {
+          localStorage.setItem("cart", JSON.stringify(cart));
+        };
+
+        // Add item to cart
+        const addToCart = (id, name, price) => {
+          const item = cart.find((item) => item.id === id);
+          if (item) {
+            item.quantity++;
+          } else {
+            cart.push({ id, name, price, quantity: 1 });
+          }
+          updateCart();
+          alert(`${name} added to cart!`);
+        };
+
+        // Display Cart Items on Cart Page
+        const displayCartItems = () => {
+          const cartItemsContainer = document.getElementById("cart-items");
+          const totalPriceElement = document.getElementById("total-price");
+
+          if (cartItemsContainer && totalPriceElement) {
+            cartItemsContainer.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((item) => {
+              const itemElement = document.createElement("div");
+              itemElement.innerHTML = `
+                          <p>${item.name} - $${item.price} x ${item.quantity}</p>
+                      `;
+              cartItemsContainer.appendChild(itemElement);
+              total += item.price * item.quantity;
+            });
+
+            totalPriceElement.textContent = `Total Price: $${total}`;
+          }
+        };
+
+        // Clear Cart
+        const clearCart = () => {
+          cart.length = 0;
+          updateCart();
+          displayCartItems();
+          alert("Cart cleared!");
+        };
+
+        // Add Event Listeners
+        const addCartButtons = document.querySelectorAll(".add-to-cart");
+        addCartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const itemElement = button.closest(".item");
+            const id = itemElement.dataset.id;
+            const name = itemElement.dataset.name;
+            const price = parseFloat(itemElement.dataset.price);
+            addToCart(id, name, price);
+          });
+        });
+
+        const clearCartButton = document.getElementById("clear-cart");
+        if (clearCartButton) {
+          clearCartButton.addEventListener("click", clearCart);
+        }
+
+        // Display cart items if on the cart page
+        displayCartItems();
+      });
+    </script>
+  </body>
+</html>

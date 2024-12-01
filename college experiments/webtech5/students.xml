@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+<students>
+    <student>
+        <fName>John</fName>
+        <lName>Doe</lName>
+        <DoB>2000-05-15</DoB>
+        <yearOfJoining>2018</yearOfJoining>
+        <branch>Computer Science</branch>
+        <section>A</section>
+    </student>
+    <student>
+        <fName>Jane</fName>
+        <lName>Smith</lName>
+        <DoB>2001-08-22</DoB>
+        <yearOfJoining>2019</yearOfJoining>
+        <branch>Electrical Engineering</branch>
+        <section>B</section>
+    </student>
+    <student>
+        <fName>Mark</fName>
+        <lName>Johnson</lName>
+        <DoB>2000-12-03</DoB>
+        <yearOfJoining>2018</yearOfJoining>
+        <branch>Mechanical Engineering</branch>
+        <section>C</section>
+    </student>
+    <student>
+        <fName>Emily</fName>
+        <lName>Williams</lName>
+        <DoB>2001-03-18</DoB>
+        <yearOfJoining>2019</yearOfJoining>
+        <branch>Civil Engineering</branch>
+        <section>D</section>
+    </student>
+    <student>
+        <fName>Michael</fName>
+        <lName>Brown</lName>
+        <DoB>2000-07-30</DoB>
+        <yearOfJoining>2018</yearOfJoining>
+        <branch>Electronics and Communication</branch>
+        <section>A</section>
+    </student>
+    <student>
+        <fName>Sarah</fName>
+        <lName>Davis</lName>
+        <DoB>2000-10-12</DoB>
+        <yearOfJoining>2018</yearOfJoining>
+        <branch>Information Technology</branch>
+        <section>B</section>
+    </student>
+    <student>
+        <fName>David</fName>
+        <lName>Miller</lName>
+        <DoB>2001-06-25</DoB>
+        <yearOfJoining>2019</yearOfJoining>
+        <branch>Chemical Engineering</branch>
+        <section>C</section>
+    </student>
+    <student>
+        <fName>Alice</fName>
+        <lName>Wilson</lName>
+        <DoB>2000-11-05</DoB>
+        <yearOfJoining>2018</yearOfJoining>
+        <branch>Biotechnology</branch>
+        <section>D</section>
+    </student>
+    <student>
+        <fName>James</fName>
+        <lName>Moore</lName>
+        <DoB>2001-01-10</DoB>
+        <yearOfJoining>2019</yearOfJoining>
+        <branch>Mechanical Engineering</branch>
+        <section>A</section>
+    </student>
+    <student>
+        <fName>Olivia</fName>
+        <lName>Taylor</lName>
+        <DoB>2000-04-20</DoB>
+        <yearOfJoining>2018</yearOfJoining>
+        <branch>Architecture</branch>
+        <section>B</section>
+    </student>
+</students>

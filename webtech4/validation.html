@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+      form {
+        max-width: 400px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      form div {
+        margin-bottom: 15px;
+      }
+      form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      form button:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Validation Form</h2>
+    <form id="validationForm">
+      <div>
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" placeholder="Enter your mobile number" />
+        <span id="mobileError" class="error"></span>
+      </div>
+      <div>
+        <label for="email">Email ID:</label>
+        <input type="text" id="email" placeholder="Enter your email ID" />
+        <span id="emailError" class="error"></span>
+      </div>
+      <button type="button" onclick="validateForm()">Validate</button>
+    </form>
+
+    <script>
+      function validateForm() {
+        // Get the input values
+        const mobile = document.getElementById("mobile").value.trim();
+        const email = document.getElementById("email").value.trim();
+
+        // Error message elements
+        const mobileError = document.getElementById("mobileError");
+        const emailError = document.getElementById("emailError");
+
+        // Clear previous errors
+        mobileError.textContent = "";
+        emailError.textContent = "";
+
+        // Validate mobile number
+        const mobilePattern = /^[0-9]{10}$/;
+        if (!mobilePattern.test(mobile)) {
+          mobileError.textContent = "Invalid mobile number. Must be 10 digits.";
+        }
+
+        // Validate email
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+          emailError.textContent =
+            "Invalid email address. Must be in the format example@domain.com.";
+        }
+
+        // If no errors, show success message
+        if (mobilePattern.test(mobile) && emailPattern.test(email)) {
+          alert("Validation Successful!");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 30px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      textarea,
+      select {
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+      .radio-group,
+      .checkbox-group {
+        margin-top: 10px;
+      }
+      .radio-group input,
+      .checkbox-group input {
+        margin-right: 5px;
+      }
+      textarea {
+        resize: vertical;
+      }
+      .buttons {
+        margin-top: 20px;
+        text-align: center;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #4caf50;
+        cursor: pointer;
+      }
+      input[type="reset"] {
+        background-color: #f44336;
+      }
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student Registration Form</h1>
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="email">Email ID:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+
+        <label>Gender:</label>
+        <div class="radio-group">
+          <input type="radio" id="male" name="gender" value="Male" required />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female" />
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="Other" />
+          <label for="other">Other</label>
+        </div>
+
+        <label>Date of Birth:</label>
+        <div class="dob-group">
+          <select name="dob_day" required>
+            <option value="">Day</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="2">3</option>
+            <option value="2">4</option>
+            <option value="2">5</option>
+            <option value="2">6</option>
+            <option value="2">7</option>
+            <option value="2">8</option>
+            <option value="2">9</option>
+            <option value="2">10</option>
+            <option value="2">11</option>
+            <option value="2">12</option>
+            <option value="2">13</option>
+            <option value="2">14</option>
+            <option value="2">15</option>
+            <option value="2">16</option>
+            <option value="2">17</option>
+            <option value="2">18</option>
+            <option value="2">19</option>
+            <option value="2">20</option>
+            <option value="2">21</option>
+            <option value="2">22</option>
+            <option value="2">23</option>
+            <option value="2">24</option>
+            <option value="2">25</option>
+            <option value="2">26</option>
+            <option value="2">27</option>
+            <option value="2">28</option>
+            <option value="2">29</option>
+            <option value="2">30</option>
+            <option value="2">31</option>
+          </select>
+
+          <select name="dob_month" required>
+            <option value="">Month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="February">March</option>
+            <option value="February">April</option>
+            <option value="February">May</option>
+            <option value="February">June</option>
+            <option value="February">July</option>
+            <option value="February">August</option>
+            <option value="February">September</option>
+            <option value="February">October</option>
+            <option value="February">November</option>
+            <option value="February">December</option>
+          </select>
+
+          <select name="dob_year" required>
+            <option value="">Year</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <!-- Add more years -->
+          </select>
+        </div>
+
+        <label>Languages Known:</label>
+        <div class="checkbox-group">
+          <input type="checkbox" id="hindi" name="language" value="Hindi" />
+          <label for="hindi">Hindi</label>
+          <input type="checkbox" id="english" name="language" value="English" />
+          <label for="english">English</label>
+        </div>
+
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          name="address"
+          rows="4"
+          placeholder="Enter your address"
+        ></textarea>
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
